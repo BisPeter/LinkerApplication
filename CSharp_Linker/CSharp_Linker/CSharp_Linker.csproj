@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Antlr4.CodeGenerator" Version="4.6.6">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Antlr4.Runtime" Version="4.6.6" />
+    <PackageReference Include="Microsoft.Build.Locator" Version="1.5.5" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.6.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.6.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="4.6.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Exchange\Exchange.csproj" />
+    <ProjectReference Include="..\RoslynHelperLibrary\RoslynHelperLibrary.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Events\" />
+  </ItemGroup>
+
+</Project>

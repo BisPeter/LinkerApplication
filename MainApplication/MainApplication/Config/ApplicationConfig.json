@@ -1,0 +1,13 @@
+{
+  "localRepositoryFolder": "C:\\Temp\\Repositories",
+  "supporteMethods": [
+    "MethodLookUp",
+    "LanguageLookUp",
+    "CodePathLookUp",
+    "SetPath"
+  ],
+  "linkers": {
+    "CSharp": "",
+    "TypeScript": ""
+  }
+}

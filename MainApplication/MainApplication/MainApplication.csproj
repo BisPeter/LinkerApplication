@@ -1,0 +1,95 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1A0A0F9F-0F64-49EE-9FC2-9D959D91B7AA}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>MainApplication</RootNamespace>
+    <AssemblyName>MainApplication</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <LangVersion>8.0</LangVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config\AppConfiguration.cs" />
+    <Compile Include="Config\Application.cs" />
+    <Compile Include="Config\Configuration.cs" />
+    <Compile Include="Config\Repository.cs" />
+    <Compile Include="LinkerManagger.cs" />
+    <Compile Include="Linker\LinkerObject.cs" />
+    <Compile Include="Managger.cs" />
+    <Compile Include="Miscl\CMDLArguments.cs" />
+    <Compile Include="Miscl\CommandlineArgsHandler.cs" />
+    <Compile Include="Miscl\ConsoleLogger.cs" />
+    <Compile Include="Miscl\FileHelper.cs" />
+    <Compile Include="Miscl\SearchConfiguration.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="Config\ApplicationConfig.json" />
+    <None Include="Config\TemplateConfig.json" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CommunicationClasses\CommunicationClasses.csproj">
+      <Project>{1930abf7-7c1c-4673-a495-3b581fd17c10}</Project>
+      <Name>CommunicationClasses</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\GitHandeler\GitHandeler.csproj">
+      <Project>{CE79F908-14A4-44A8-A561-FE4634BD4B54}</Project>
+      <Name>GitHandeler</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IPCommunicator\IPCommunicator.csproj">
+      <Project>{c1247dc8-3e09-477c-969b-8af69f0a37b2}</Project>
+      <Name>IPCommunicator</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\TemplateParser\TemplateParser.csproj">
+      <Project>{ab927087-a098-435c-bc5f-410b2c457b24}</Project>
+      <Name>TemplateParser</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="LinkerExecutables\" />
+    <Folder Include="LinkerProcesses\" />
+    <Folder Include="Template\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

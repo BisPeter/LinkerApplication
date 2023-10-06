@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Build.Locator" Version="1.5.5" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Common" Version="4.6.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.6.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.6.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.Common" Version="4.6.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Workspaces.MSBuild" Version="4.6.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Exchange\Exchange.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Microsoft.Build.Locator">
+      <HintPath>..\..\..\MainApplication\CSharp_Linker\CSharp_Linker\bin\Debug\Microsoft.Build.Locator.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp">
+      <HintPath>..\..\..\MainApplication\CSharp_Linker\CSharp_Linker\bin\Debug\Microsoft.CodeAnalysis.CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeAnalysis.CSharp.Workspaces">
+      <HintPath>..\CSharp_Linker\Microsoft.CodeAnalysis.CSharp.Workspaces.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
